@@ -2,11 +2,14 @@
 
 <project name="HipChatExample" default="build">
     
+    <!-- Make sure Phing task can find the Hippy class -->
+    <includepath classpath="./hippy" />
+    <!-- Include Phing task -->
     <taskdef name="hipchat" classpath="./" classname="PhingHippy" />
     
     <target name="build">
         
-        <includepath classpath="new/path/here" />
+        <!-- Send some messages -->
         <hipchat token="your_token" room="Hippy" from="rcrowe" message="hello world" />
 
         <hipchat token="your_token" room="Hippy" from="rcrowe" notify="false">
