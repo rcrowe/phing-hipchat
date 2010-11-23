@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="HipChatExample" default="build">
+    
+    <taskdef name="hipchat" classpath="./" classname="PhingHippy" />
+    
+    <target name="build">
+        
+        <includepath classpath="new/path/here" />
+        <hipchat token="your_token" room="Hippy" from="rcrowe" message="hello world" />
+
+        <hipchat token="your_token" room="Hippy" from="rcrowe" notify="false">
+            <speak message="Blah blah blah" />
+            <speak message="Blah blah blah" />
+            <speak message="Blah blah blah" />
+        </hipchat>
+        
+    </target>
+    
+</project>
