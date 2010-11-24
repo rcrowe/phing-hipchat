@@ -13,5 +13,9 @@ Requirements
 Example
 --------
 
-For an example see `build.xml`
+For a full example see `build.xml`
 
+<hipchat token="your_token" room="Hippy" from="rcrowe">
+    <speak message="Build successful" />
+    <speak message="3 warnings" />
+</hipchat>
