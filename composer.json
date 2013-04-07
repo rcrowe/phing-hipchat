@@ -1,0 +1,26 @@
+{
+    "name": "rcrowe/phing-hipchat",
+    "description": "Send messages to a Hipchat room from your Phing build file.",
+    "homepage": "https://github.com/rcrowe/phing-hipchat",
+    "license": "MIT",
+    "keywords": ["hipchat", "chat", "message", "notification", "phing"],
+    "authors": [
+        {
+            "name": "Rob Crowe",
+            "email": "hello@vivalacrowe.com"
+        }
+    ],
+    "type": "library",
+    "require": {
+        "php": ">=5.3.2",
+        "rcrowe/hippy": "0.6.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "phing/phing": "2.5.*",
+        "mockery/mockery": "*"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}

@@ -1,6 +1,0 @@
-[submodule "lib/hippy"]
-	path = lib/hippy
-	url = git@github.com:rcrowe/Hippy.git
-[submodule "hippy"]
-	path = hippy
-	url = git@github.com:rcrowe/Hippy.git
