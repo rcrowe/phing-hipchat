@@ -1,6 +1,8 @@
 phing-hipchat
 =============
 
+[![Build Status](https://secure.travis-ci.org/rcrowe/phing-hipchat.png)](http://travis-ci.org/rcrowe/phing-hipchat)
+
 A Phing task for sending messages to a HipChat room.
 
 Installation
