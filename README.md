@@ -39,7 +39,7 @@ All attributes apart from `notify` and `background` are required.
 
 **Properties file**
 
-You can also define the attributes as properties (I like to keep my in a properties file).
+You can also define the attributes as properties (I like to keep mine in a properties file).
 
 	<property name="hipchat.token" value="23k4l4jkl234jl234kl24" />
 	<property name="hipchat.room" value="Hippy" />
