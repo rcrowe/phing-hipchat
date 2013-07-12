@@ -120,7 +120,7 @@ class GetSetTests extends \PHPUnit_Framework_TestCase
         $this->assertTrue($task->getNotify());
     }
 
-    public function testNotfiyDefault()
+    public function testNotifyDefault()
     {
         $task = new PhingTask;
 
