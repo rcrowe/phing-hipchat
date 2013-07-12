@@ -13,7 +13,7 @@ The preferred way of installation is through Composer. Add `rcrowe\phing-hipchat
 ```javascript
 {
     "require": {
-        "rcrowe/phing-hipchat": "0.*"
+        "rcrowe/phing-hipchat": "0.1.*"
     }
 }
 ```
