@@ -59,4 +59,18 @@ class MessageTests extends \PHPUnit_Framework_TestCase
         $task = new PhingTask;
         $this->assertEquals(get_class($task->createQueue()), 'rcrowe\Hippy\PhingTask');
     }
+
+    /**
+     * @expectedException BuildException
+     */
+    public function testFailOnErrorOn() {
+        $task = new PhingTask;
+        $task->setText('');
+    }
+
+    public function testFailOnErrorOff() {
+        $task = new PhingTask;
+        $task->setFailOnError(false);
+        $task->setText('');
+    }
 }

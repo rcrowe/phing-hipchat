@@ -17,6 +17,7 @@ class PhingTask extends Task
     protected $from;
     protected $notify;
     protected $background;
+    protected $failOnError = true;
     protected $msgStore = array();
 
     public function getToken()
@@ -100,6 +101,16 @@ class PhingTask extends Task
         $this->background = $background;
     }
 
+    public function getFailOnError()
+    {
+        return $this->failOnError;
+    }
+
+    public function setFailOnError($failOnError)
+    {
+        $this->failOnError = $failOnError;
+    }
+
     public function setMsg($msg)
     {
         $this->setText($msg);
@@ -112,7 +123,7 @@ class PhingTask extends Task
 
     public function setText($msg)
     {
-        if (empty($msg)) {
+        if (empty($msg) && $this->failOnError) {
             throw new BuildException('Invalid message');
         }
 
@@ -124,7 +135,7 @@ class PhingTask extends Task
 
     public function setHtml($msg)
     {
-        if (empty($msg)) {
+        if (empty($msg) && $this->failOnError) {
             throw new BuildException('Invalid message');
         }
 
@@ -159,10 +170,19 @@ class PhingTask extends Task
                 case Message::FORMAT_HTML: $message->setHtml($msg['msg']);
                                            break;
 
-                default: throw new BuildException('Unknown message format');
+                default: if ($this->failOnError) throw new BuildException('Unknown message format');
+                         break;
             }
 
-            $client->send($message);
+            try {
+                $client->send($message);
+            }
+            catch (Exception $e) {
+                if ($this->failOnError) {
+                    throw $e;
+                }
+            }
+
         }
     }
 }
